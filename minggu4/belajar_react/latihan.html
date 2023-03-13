@@ -1,0 +1,64 @@
+<!-- Komang Gede N S
+16/3B/2041720225 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Uncover</title>
+
+    <style>
+        table,tr,th,td{
+            border: 2px solid violet ;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.js"></script>
+    <script type="text/babel">
+        const mahasiswas =[{
+            nama: "Eka",
+            umur: "19",
+            jurusan: "Teknik Informatika"
+        },
+        {
+            nama: "Lisa",
+            umur: "18",
+            jurusan: "Sistem Informasi"
+        },
+        {
+            nama: "Rudi",
+            umur: "19",
+            jurusan: "Teknik Elektro"
+        }
+        ];
+        const myElement = (
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Umur</th>
+                        <th>Jurusan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {mahasiswas.map((mahasiwa, i)=>
+                            <tr key={i}>
+                                <td>{mahasiwa.nama}</td>
+                                <td>{mahasiwa.umur}</td>
+                                <td>{mahasiwa.jurusan}</td>
+                                </tr>
+                            )}
+                        </tbody>
+                </table>
+        );
+        ReactDOM.createRoot(document.getElementById('root')).render(myElement);
+    </script>
+</body>
+</html>
